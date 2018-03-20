@@ -1,0 +1,20 @@
+{
+  "name": "the-cutest-todo-app",
+  "version": "1.0.0",
+  "description": "🌸 The cutest todo app that you've ever seen.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leonardomso/the-cutest-todo-app.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/leonardomso/the-cutest-todo-app/issues"
+  },
+  "homepage": "https://github.com/leonardomso/the-cutest-todo-app#readme"
+}
