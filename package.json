@@ -1,20 +1,36 @@
 {
-  "name": "the-cutest-todo-app",
-  "version": "1.0.0",
-  "description": "🌸 The cutest todo app that you've ever seen.",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/leonardomso/the-cutest-todo-app.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/leonardomso/the-cutest-todo-app/issues"
-  },
-  "homepage": "https://github.com/leonardomso/the-cutest-todo-app#readme"
+    "name": "the-cutest-todo-app",
+    "version": "1.0.0",
+    "description": "🌸 The cutest todo app that you've ever seen.",
+    "main": "index.js",
+    "scripts": {
+        "start": "webpack-dev-server --mode development --open --hot",
+        "build": "webpack --mode production",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/leonardomso/the-cutest-todo-app.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/leonardomso/the-cutest-todo-app/issues"
+    },
+    "homepage": "https://github.com/leonardomso/the-cutest-todo-app#readme",
+    "devDependencies": {
+        "babel-core": "^6.26.0",
+        "babel-loader": "^7.1.4",
+        "babel-preset-env": "^1.6.1",
+        "babel-preset-react": "^6.24.1",
+        "html-webpack-plugin": "^3.0.7",
+        "react": "^16.2.0",
+        "react-dom": "^16.2.0",
+        "react-redux": "^5.0.7",
+        "redux": "^3.7.2",
+        "webpack": "^4.1.1",
+        "webpack-cli": "^2.0.12",
+        "webpack-dev-server": "^3.1.1"
+    }
 }
