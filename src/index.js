@@ -2,21 +2,13 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
-import rootReducer from './reducers/index';
+import store from './store/store';
 
-const store = createStore(rootReducer);
-
-class App extends React.Component {
-    render() {
-        return (
-            <Provider store={store}>
-                <div>Hello Redux!</div>
-            </Provider>
-        );
-    }
-}
+import App from './components/app';
 
 ReactDOM.render(
-    <App />,
+    <Provider store={store}>
+        <App />
+    </Provider>,
     document.querySelector('.container')
 );
