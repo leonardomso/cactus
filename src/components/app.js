@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-class App extends React.Component {
-    render() {
-        return (
-            <div>Hello Redux!</div>
-        );
-    }
+import Task from './Task';
+
+class App extends Component {
+	render() {
+		return <Task />;
+	}
 }
 
 export default App;
