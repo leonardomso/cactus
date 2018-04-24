@@ -20,8 +20,6 @@ class AddTask extends Component {
 
 				<input type="text" placeholder="New task..." />
 
-				<input type="text" placeholder="Who..." />
-
 				<button type="onSubmit">Add</button>
 			</div>
 		);

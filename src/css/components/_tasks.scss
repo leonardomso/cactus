@@ -1,13 +1,21 @@
 .tasks {
 	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	width: 100vw;
+	height: 100%;
 	grid-row: 2 / 3;
-	width: 270px;
-	min-height: 420px;
-	flex-direction: column;
-	align-items: center;
 	margin-top: 20px;
 	margin-left: 30px;
+}
+
+.task {
+	display: flex;
+	flex-direction: column;
+	margin: 0;
+	width: 270px;
 	border-radius: 10px;
+	min-height: 420px;
+	align-items: center;
 }
 
 .tasks__item {
@@ -19,6 +27,13 @@
 	margin-top: 15px;
 	background-color: white;
 	border-radius: 10px;
+	cursor: pointer;
+
+	p {
+		color: #1d2c43;
+		font-size: calc(12px + (12 - 12) * (100vw - 240px) / (700 - 240));
+		@extend %roboto-medium;
+	}
 }
 
 .tasks__title {
