@@ -1,11 +1,8 @@
 .tasks {
-	display: flex;
 	width: auto;
-	flex-direction: row;
 	height: 100%;
 	grid-row: 2 / 3;
 	margin-top: 20px;
-	margin-left: 30px;
 	align-content: center;
 	justify-content: space-around;
 }
@@ -13,21 +10,18 @@
 .task {
 	display: flex;
 	flex-direction: column;
-	margin: 0;
-	width: 270px;
 	border-radius: 10px;
-	min-height: 420px;
+	min-height: 340px;
 	align-items: center;
 }
 
 .tasks__cross {
-	width: 5%;
+	width: 12px;
 	align-self: flex-start;
-	margin-top: 10px;
-	margin-right: 10px;
+	margin-top: 5px;
 	fill: #1d2c43;
 	cursor: pointer;
-	display: none;
+	opacity: 0;
 }
 
 .tasks__item {
@@ -50,7 +44,7 @@
 
 	&:hover {
 		.tasks__cross {
-			display: block;
+			opacity: 1;
 		}
 	}
 }
@@ -61,4 +55,18 @@
 	color: #1d2c43;
 	font-size: calc(16px + (16 - 16) * (100vw - 240px) / (700 - 240));
 	@extend %roboto-bold;
+}
+
+@media only screen and (min-width: 240px) {
+	.tasks {
+		display: grid;
+		grid-template-rows: 1fr 1fr 1fr;
+		grid-template-columns: auto;
+	}
+
+	.task {
+		width: 80vw;
+		height: auto;
+		margin-top: 20px;
+	}
 }

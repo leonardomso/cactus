@@ -14,11 +14,10 @@ class AddTask extends Component {
 					There are 6 tasks on board
 				</h3>
 				<p className="trololo__explanation">
-					Type task text and executor name. Click on card to move to
-					another list.
+					Type task text and click on card to move to another list.
 				</p>
 
-				<input type="text" placeholder="New task..." />
+				<input type="text" placeholder="New task..." autoFocus />
 
 				<button type="onSubmit">Add</button>
 			</div>
