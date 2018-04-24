@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700');
+
+$ff-roboto: 'Roboto', sans-serif;
+
+.main__title--citys {
+	font-size: calc(20px + (24 - 20) * (100vw - 240px) / (700 - 240));
+}
+
+%roboto-light {
+	font-family: 'Roboto', sans-serif;
+	font-weight: 300;
+}
+
+%roboto-regular {
+	font-family: 'Roboto', sans-serif;
+	font-weight: 400;
+}
+
+%roboto-medium {
+	font-family: 'Roboto', sans-serif;
+	font-weight: 500;
+}
+
+%roboto-bold {
+	font-family: 'Roboto', sans-serif;
+	font-weight: 700;
+}

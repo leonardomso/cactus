@@ -1,0 +1,30 @@
+.tasks {
+	display: grid;
+	grid-row: 2 / 3;
+	width: 270px;
+	min-height: 420px;
+	flex-direction: column;
+	align-items: center;
+	margin-top: 20px;
+	margin-left: 30px;
+	border-radius: 10px;
+}
+
+.tasks__item {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 85%;
+	height: 75px;
+	margin-top: 15px;
+	background-color: white;
+	border-radius: 10px;
+}
+
+.tasks__title {
+	align-self: flex-start;
+	margin-left: 22px;
+	color: #1d2c43;
+	font-size: calc(16px + (16 - 16) * (100vw - 240px) / (700 - 240));
+	@extend %roboto-bold;
+}

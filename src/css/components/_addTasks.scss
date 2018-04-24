@@ -1,0 +1,39 @@
+.add__task {
+	grid-row: 1 / 2;
+}
+
+.trololo__title {
+	color: #1d2c43;
+	font-size: calc(24px + (28 - 20) * (100vw - 240px) / (700 - 240));
+	@extend %roboto-bold;
+}
+
+.trololo__subtitle {
+	color: #1d2c43;
+	@extend %roboto-regular;
+}
+
+.trololo__explanation {
+	color: #a1a1a1;
+	@extend %roboto-regular;
+}
+
+input {
+	height: 30px;
+	width: 25%;
+	border: 1px solid #e1e1e1;
+	border-radius: 7px;
+	margin-left: 15px;
+	text-indent: 20px;
+}
+
+button {
+	height: 35px;
+	width: 8%;
+	background-color: #5acec1;
+	color: white;
+	border: none;
+	border-radius: 8px;
+	margin-left: 10px;
+	cursor: pointer;
+}
