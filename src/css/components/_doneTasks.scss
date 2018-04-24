@@ -4,5 +4,10 @@
 	align-items: center;
 }
 
-@media only screen and (min-width: 240px) {
+@media only screen and (min-width: 600px) {
+	.done__tasks {
+		width: 90%;
+		justify-self: center;
+		justify-content: flex-start;
+	}
 }
