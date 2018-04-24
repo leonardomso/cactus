@@ -4,23 +4,28 @@
 
 .trololo__title {
 	color: #1d2c43;
-	font-size: calc(24px + (28 - 20) * (100vw - 240px) / (700 - 240));
+	font-size: calc(30px + (34 - 30) * (100vw - 240px) / (700 - 240));
 	@extend %roboto-bold;
 }
 
 .trololo__subtitle {
 	color: #1d2c43;
+	font-size: calc(16px + (18 - 16) * (100vw - 240px) / (700 - 240));
+	margin: 0;
 	@extend %roboto-regular;
 }
 
 .trololo__explanation {
+	font-size: calc(12px + (14 - 12) * (100vw - 240px) / (700 - 240));
 	color: #a1a1a1;
+	padding: 20px;
+	margin: 0;
 	@extend %roboto-regular;
 }
 
 input {
+	width: 350px;
 	height: 30px;
-	width: 25%;
 	border: 1px solid #e1e1e1;
 	border-radius: 7px;
 	margin-left: 15px;
@@ -28,12 +33,22 @@ input {
 }
 
 button {
+	width: 88px;
 	height: 35px;
-	width: 8%;
 	background-color: #5acec1;
 	color: white;
 	border: none;
 	border-radius: 8px;
 	margin-left: 10px;
 	cursor: pointer;
+}
+
+@media only screen and (max-width: 620px) {
+	input {
+		width: 50vw;
+	}
+
+	button {
+		width: 15vw;
+	}
 }

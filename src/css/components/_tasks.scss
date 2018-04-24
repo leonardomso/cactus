@@ -1,11 +1,13 @@
 .tasks {
-	display: grid;
-	grid-template-columns: 1fr 1fr 1fr;
-	width: 100vw;
+	display: flex;
+	width: auto;
+	flex-direction: row;
 	height: 100%;
 	grid-row: 2 / 3;
 	margin-top: 20px;
 	margin-left: 30px;
+	align-content: center;
+	justify-content: space-around;
 }
 
 .task {
@@ -18,21 +20,38 @@
 	align-items: center;
 }
 
+.tasks__cross {
+	width: 5%;
+	align-self: flex-start;
+	margin-top: 10px;
+	margin-right: 10px;
+	fill: #1d2c43;
+	cursor: pointer;
+	display: none;
+}
+
 .tasks__item {
 	display: flex;
 	align-items: center;
-	justify-content: center;
+	justify-content: space-between;
 	width: 85%;
 	height: 75px;
 	margin-top: 15px;
+	padding: 8px;
 	background-color: white;
 	border-radius: 10px;
-	cursor: pointer;
 
 	p {
+		margin: 0 auto;
 		color: #1d2c43;
 		font-size: calc(12px + (12 - 12) * (100vw - 240px) / (700 - 240));
 		@extend %roboto-medium;
+	}
+
+	&:hover {
+		.tasks__cross {
+			display: block;
+		}
 	}
 }
 
