@@ -13,7 +13,7 @@ class AddTask extends Component {
 
 	onSubmit = e => {
 		e.preventDefault();
-		this.props.addTask(this.state.text);
+		this.props.dispatch(addTask(this.state.text));
 		this.setState({ text: '' });
 	};
 
@@ -27,9 +27,7 @@ class AddTask extends Component {
 		return (
 			<div className="add__task">
 				<h1 className="trololo__title">Trololo Board</h1>
-				<h3 className="trololo__subtitle">
-					There are 6 tasks on board
-				</h3>
+				<h3 className="trololo__subtitle">There are tasks on board</h3>
 				<p className="trololo__explanation">
 					Type task text and click on card to move to another list.
 				</p>
@@ -51,4 +49,10 @@ class AddTask extends Component {
 	}
 }
 
-export default connect()(AddTask);
+const mapStateToProps = state => {
+	return {
+		tasks: state.tasks
+	};
+};
+
+export default connect(mapStateToProps)(AddTask);

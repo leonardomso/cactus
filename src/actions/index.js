@@ -1,10 +1,11 @@
 import * as constants from '../constants/';
+import uuid from 'uuid';
 
-export const addTask = (task) => ({
+export const addTask = (text) => ({
     type: constants.ADD_TASK,
     task: {
         id: uuid(),
-        text: action.text,
+        text,
         completed: false
     }
 });
