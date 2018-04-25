@@ -1,10 +1,27 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { addTask } from '../actions/';
 
 class AddTask extends Component {
 	constructor(props) {
 		super(props);
+
+		this.state = {
+			text: ''
+		};
 	}
+
+	onSubmit = e => {
+		e.preventDefault();
+		this.props.addTask(this.state.text);
+		this.setState({ text: '' });
+	};
+
+	onInputChange = e => {
+		this.setState({
+			text: e.target.value
+		});
+	};
 
 	render() {
 		return (
@@ -17,26 +34,21 @@ class AddTask extends Component {
 					Type task text and click on card to move to another list.
 				</p>
 
-				<input type="text" placeholder="New task..." autoFocus />
+				<form onSubmit={this.onSubmit}>
+					<input
+						value={this.state.value}
+						onChange={this.onInputChange}
+						type="text"
+						name="task"
+						placeholder="New task..."
+						autoFocus
+					/>
 
-				<button type="onSubmit">Add</button>
+					<button onClick={this.onSubmit}>Add</button>
+				</form>
 			</div>
 		);
 	}
 }
 
-function mapStateToProps(state, ownProps) {
-	return {
-		list: state.list
-	};
-}
-
-function mapDispatchToProps(dispatch) {
-	return {
-		add: value => {
-			dispatch({ type: 'ADD', payload: value });
-		}
-	};
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(AddTask);
+export default connect()(AddTask);
