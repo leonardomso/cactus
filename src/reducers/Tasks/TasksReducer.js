@@ -11,8 +11,8 @@ const TaskReducer = (state = initialState, action) => {
 			return { ...state,	tasks: [...state.tasks, action.task] };
 		case constants.DONE_TASK:
 			return state.map(task => task.id !== action.id);
-		case constants.REMOVE_TASK:
-			return;
+		case constants.DELETE_TASK:
+			return { ...state, tasks: state.tasks.filter(task => task.id !== action.id) };
 		default:
 			return state;
 	}
