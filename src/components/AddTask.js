@@ -34,10 +34,9 @@ class AddTask extends Component {
 
 				<form onSubmit={this.onSubmit}>
 					<input
-						value={this.state.value}
+						value={this.state.text}
 						onChange={this.onInputChange}
 						type="text"
-						name="task"
 						placeholder="New task..."
 						autoFocus
 					/>

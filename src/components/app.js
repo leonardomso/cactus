@@ -1,16 +1,19 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import AddTask from './AddTask';
 import Tasks from './Tasks';
 
-class App extends Component {
-	render() {
-		return (
-			<div className="app">
-				<AddTask />
-				<Tasks />
-			</div>
-		);
-	}
-}
+const App = props => (
+	<div className="app">
+		<AddTask />
+		<Tasks />
+	</div>
+);
 
-export default App;
+const mapStateToProps = state => {
+	return {
+		tasks: state.tasks
+	};
+};
+
+export default connect(mapStateToProps)(App);

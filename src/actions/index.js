@@ -10,12 +10,12 @@ export const addTask = (text) => ({
     }
 });
 
-export const deleteTask = (task) => ({
+export const deleteTask = (id) => ({
     type: constants.DELETE_TASK,
-    task
+    id
 });
 
-export const doneTask = (task) => ({
+export const doneTask = (id) => ({
     type: constants.DONE_TASK,
-    task
+    id
 });
