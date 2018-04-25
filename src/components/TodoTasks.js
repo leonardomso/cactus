@@ -1,13 +1,19 @@
 import React, { Component } from 'react';
+import Task from './Task';
 import { connect } from 'react-redux';
 
 class TodoTasks extends Component {
+	constructor(props) {
+		super(props);
+	}
+
 	render() {
+		console.log(this.props.tasks);
 		return (
 			<div className="task todo__tasks">
 				<h1 className="tasks__title">Todo Tasks</h1>
 				<div className="tasks__item">
-					<p>HAHAHAHAHAHHA</p>
+					<p>hahha</p>
 					<svg
 						className="tasks__icon tasks__check"
 						xmlns="http://www.w3.org/2000/svg"
