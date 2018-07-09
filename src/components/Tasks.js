@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 
 import Task from "./Task";
 import DoneTasks from "./DoneTasks";
-import DoingTasks from "./DoingTasks";
+import DeletedTasks from "./DeletedTasks";
 
 class Tasks extends Component {
     render() {
@@ -32,7 +32,7 @@ class Tasks extends Component {
                     ))}
                 </div>
                 <DoneTasks />
-                <DoingTasks />
+                <DeletedTasks />
             </div>
         );
     }

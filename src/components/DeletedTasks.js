@@ -1,14 +1,14 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 
-class DoneTasks extends Component {
+class DeletedTasks extends Component {
     render() {
         return (
-            <div className="task done__tasks">
-                <h1 className="tasks__title">Done Tasks</h1>
+            <div className="task doing__tasks">
+                <h1 className="tasks__title">Deleted Tasks</h1>
                 {this.props.tasks.tasks.map(
                     task =>
-                        task.completed ? (
+                        task.deleted ? (
                             <div key={task.id} className="tasks__item">
                                 <p>{task.text}</p>
                                 <svg
@@ -41,4 +41,4 @@ const mapStateToProps = state => {
     };
 };
 
-export default connect(mapStateToProps)(DoneTasks);
+export default connect(mapStateToProps)(DeletedTasks);

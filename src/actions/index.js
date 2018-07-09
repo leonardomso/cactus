@@ -6,7 +6,8 @@ export const addTask = text => ({
     task: {
         id: uuid(),
         text,
-        completed: false
+        completed: false,
+        deleted: false
     }
 });
 
