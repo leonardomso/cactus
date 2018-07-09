@@ -1,51 +1,51 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { addTask } from '../actions/';
+import React, { Component } from "react";
+import { connect } from "react-redux";
+import { addTask } from "../actions/";
 
 class AddTask extends Component {
-	constructor(props) {
-		super(props);
+    constructor(props) {
+        super(props);
 
-		this.state = {
-			text: ''
-		};
-	}
+        this.state = {
+            text: ""
+        };
+    }
 
-	onSubmit = e => {
-		e.preventDefault();
-		this.props.dispatch(addTask(this.state.text));
-		this.setState({ text: '' });
-	};
+    onSubmit = e => {
+        e.preventDefault();
+        this.props.dispatch(addTask(this.state.text));
+        this.setState({ text: "" });
+    };
 
-	onInputChange = e => {
-		this.setState({
-			text: e.target.value
-		});
-	};
+    onInputChange = e => {
+        this.setState({
+            text: e.target.value
+        });
+    };
 
-	render() {
-		return (
-			<div className="add__task">
-				<h1 className="trololo__title">Trololo Board</h1>
-				<h3 className="trololo__subtitle">There are tasks on board</h3>
-				<p className="trololo__explanation">
-					Type task text and click on card to move to another list.
-				</p>
+    render() {
+        return (
+            <div className="add__task">
+                <h1 className="trololo__title">Trololo Board</h1>
+                <h3 className="trololo__subtitle">There are tasks on board</h3>
+                <p className="trololo__explanation">
+                    Type task text and click on card to move to another list.
+                </p>
 
-				<form onSubmit={this.onSubmit}>
-					<input
-						value={this.state.text}
-						onChange={this.onInputChange}
-						type="text"
-						placeholder="New task..."
-						autoFocus
-					/>
+                <form onSubmit={this.onSubmit}>
+                    <input
+                        value={this.state.text}
+                        onChange={this.onInputChange}
+                        type="text"
+                        placeholder="New task..."
+                        autoFocus
+                    />
 
-					<button onClick={this.onSubmit}>Add</button>
-				</form>
-			</div>
-		);
-	}
+                    <button onClick={this.onSubmit}>Add</button>
+                </form>
+            </div>
+        );
+    }
 }
 
 export default connect()(AddTask);

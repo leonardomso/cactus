@@ -1,7 +1,7 @@
-import * as constants from '../constants/';
-import uuid from 'uuid';
+import * as constants from "../constants/";
+import uuid from "uuid";
 
-export const addTask = (text) => ({
+export const addTask = text => ({
     type: constants.ADD_TASK,
     task: {
         id: uuid(),
@@ -10,12 +10,12 @@ export const addTask = (text) => ({
     }
 });
 
-export const deleteTask = (id) => ({
+export const deleteTask = id => ({
     type: constants.DELETE_TASK,
     id
 });
 
-export const doneTask = (id) => ({
+export const doneTask = id => ({
     type: constants.DONE_TASK,
     id
 });
