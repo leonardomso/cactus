@@ -11,10 +11,4 @@ const App = props => (
     </div>
 );
 
-const mapStateToProps = state => {
-    return {
-        tasks: state.tasks
-    };
-};
-
-export default connect(mapStateToProps)(App);
+export default connect()(App);

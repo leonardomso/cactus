@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
 import { addTask } from "../actions/";
 
@@ -13,7 +14,7 @@ class AddTask extends Component {
 
     onSubmit = e => {
         e.preventDefault();
-        this.props.dispatch(addTask(this.state.text));
+        this.props.addTask(this.state.text);
         this.setState({ text: "" });
     };
 
@@ -48,4 +49,14 @@ class AddTask extends Component {
     }
 }
 
-export default connect()(AddTask);
+const mapStateToProps = state => {
+    return {
+        tasks: state.tasks
+    };
+};
+
+const mapDispatchToProps = dispatch => {
+    return bindActionCreators({ addTask }, dispatch);
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(AddTask);
