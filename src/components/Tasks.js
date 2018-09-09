@@ -19,35 +19,6 @@ const StyledTasks = styled.main`
     border-radius: 3px;
 `;
 
-const TaskItem = styled.div`
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-top: 10px;
-    border-radius: 3px;
-    width: 90%;
-    height: 70px;
-    cursor: pointer;
-
-    &:hover {
-        border: 1px solid rgba(0, 0, 0, 0.1);
-    }
-
-    p {
-        margin: 0 auto;
-        color: #dd5e89;
-        font-size: calc(12px + (14 - 12) * (100vw - 240px) / (700 - 240));
-        font-family: 'Roboto', sans-serif;
-        font-weight: 400;
-    }
-`;
-
-const Svg = styled.img`
-    width: 12px;
-    height: 12px;
-    margin-right: 10px;
-`;
-
 class Tasks extends Component {
     render() {
         const { tasks } = this.props;
@@ -55,13 +26,7 @@ class Tasks extends Component {
         return (
             <StyledTasks>
                 {tasks.map(task => (
-                    <TaskItem key={task.id}>
-                        <p>{task.text}</p>
-                        <Svg
-                            src={`${cross}`}
-                            onClick={() => this.props.deleteTask(task.id)}
-                        />
-                    </TaskItem>
+                    <Task key={task.id} text={task.text} id={task.id} />
                 ))}
             </StyledTasks>
         );

@@ -36,21 +36,16 @@ const Svg = styled.img`
 `;
 
 class Task extends Component {
-    onDelete = id => {
-        this.props.deleteTask(id);
-    };
-
     render() {
-        const { tasks } = this.props;
+        const { tasks, text, id } = this.props;
 
         return (
             <StyledTask>
-                {tasks.map(task => (
-                    <Fragment>
-                        <p>{task.text}</p>
-                        <Svg src={`${cross}`} onClick={this.onDelete} />
-                    </Fragment>
-                ))}
+                <p>{text}</p>
+                <Svg
+                    src={`${cross}`}
+                    onClick={() => this.props.deleteTask(id)}
+                />
             </StyledTask>
         );
     }
