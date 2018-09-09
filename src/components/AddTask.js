@@ -3,10 +3,10 @@ import styled from 'styled-components';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
+import { addTask, deleteTask } from '../actions/';
 import Form from '../utils/components/form/';
 import Input from '../utils/components/input/';
 import Button from '../utils/components/button/';
-import { addTask } from '../actions/';
 
 const StyledAddTask = styled.header`
     width: 100%;

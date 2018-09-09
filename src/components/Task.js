@@ -1,25 +1,12 @@
-import React, { Component } from 'react';
+import React, { Fragment, Component } from 'react';
 import styled from 'styled-components';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
 import { deleteTask } from '../actions/';
 import cross from '../utils/icons/cross.svg';
-import Task from './Task';
 
-const StyledTasks = styled.main`
-    width: 100%;
-    height: 100%;
-    background-color: white;
-    grid-row: 2 / 3;
-    display: flex;
-    flex-direction: column;
-    justify-content: start;
-    align-items: center;
-    border-radius: 3px;
-`;
-
-const TaskItem = styled.div`
+const StyledTask = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -48,22 +35,23 @@ const Svg = styled.img`
     margin-right: 10px;
 `;
 
-class Tasks extends Component {
+class Task extends Component {
+    onDelete = id => {
+        this.props.deleteTask(id);
+    };
+
     render() {
         const { tasks } = this.props;
 
         return (
-            <StyledTasks>
+            <StyledTask>
                 {tasks.map(task => (
-                    <TaskItem key={task.id}>
+                    <Fragment>
                         <p>{task.text}</p>
-                        <Svg
-                            src={`${cross}`}
-                            onClick={() => this.props.deleteTask(task.id)}
-                        />
-                    </TaskItem>
+                        <Svg src={`${cross}`} onClick={this.onDelete} />
+                    </Fragment>
                 ))}
-            </StyledTasks>
+            </StyledTask>
         );
     }
 }
@@ -81,4 +69,4 @@ const mapDispatchToProps = dispatch => {
 export default connect(
     mapStateToProps,
     mapDispatchToProps
-)(Tasks);
+)(Task);

@@ -1,22 +1,16 @@
-import * as constants from "../constants/";
-import uuid from "uuid";
+import * as types from '../constants/';
 
 export const addTask = text => ({
-    type: constants.ADD_TASK,
-    task: {
-        id: uuid(),
-        text,
-        completed: false,
-        deleted: false
-    }
+    type: types.ADD_TASK,
+    text
 });
 
 export const deleteTask = id => ({
-    type: constants.DELETE_TASK,
+    type: types.DELETE_TASK,
     id
 });
 
-export const doneTask = id => ({
-    type: constants.DONE_TASK,
+export const completeTask = id => ({
+    type: types.COMPLETE_TASK,
     id
 });
