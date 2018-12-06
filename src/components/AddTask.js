@@ -3,10 +3,10 @@ import styled from 'styled-components';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
-import { addTask, deleteTask } from '../actions/';
-import Form from '../utils/components/form/';
-import Input from '../utils/components/input/';
-import Button from '../utils/components/button/';
+import { addTask } from '../actions';
+import Form from '../utils/components/form';
+import Input from '../utils/components/input';
+import Button from '../utils/components/button';
 
 const StyledAddTask = styled.nav`
     width: 100%;
@@ -54,7 +54,7 @@ class AddTask extends Component {
 
     onSubmit = e => {
         e.preventDefault();
-        if (this.state.text != '') {
+        if (this.state.text !== '') {
             this.props.addTask(this.state.text);
             this.setState({ text: '' });
         }

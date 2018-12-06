@@ -1,4 +1,4 @@
-import * as types from '../constants/';
+import * as types from "../constants";
 
 export const addTask = text => ({
     type: types.ADD_TASK,

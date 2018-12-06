@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
-import { deleteTask } from '../actions/';
+import { deleteTask } from "../actions";
 import Task from './Task';
 
 const StyledTasks = styled.ul`
