@@ -2,7 +2,8 @@ import styled from 'styled-components';
 
 const Button = styled.button`
     width: ${props => props.width};
-    height: 40px;
+    height: 44px;
+    font-size: 14px;
     font-family: 'Roboto', sans-serif;
     font-weight: 400;
     background-color: white;

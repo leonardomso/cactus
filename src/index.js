@@ -4,7 +4,6 @@ import { Provider } from 'react-redux';
 import { injectGlobal } from 'styled-components';
 
 import store from './store/store';
-import css from './css/styles.scss';
 import App from './components/App';
 
 injectGlobal`

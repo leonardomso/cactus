@@ -6,7 +6,7 @@ import { connect } from 'react-redux';
 import { deleteTask } from '../actions/';
 import cross from '../utils/icons/cross.svg';
 
-const StyledTask = styled.div`
+const StyledTask = styled.li`
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -37,11 +37,11 @@ const Svg = styled.img`
 
 class Task extends Component {
     render() {
-        const { tasks, text, id } = this.props;
+        const { text, id } = this.props;
 
         return (
             <StyledTask>
-                <p>{text}</p>
+                {text}
                 <Svg
                     src={`${cross}`}
                     onClick={() => this.props.deleteTask(id)}

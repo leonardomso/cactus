@@ -8,9 +8,11 @@ import Form from '../utils/components/form/';
 import Input from '../utils/components/input/';
 import Button from '../utils/components/button/';
 
-const StyledAddTask = styled.header`
+const StyledAddTask = styled.nav`
     width: 100%;
-    height: 100%;
+    max-width: 500px;
+    min-width: 250px;
+    height: 50%;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;

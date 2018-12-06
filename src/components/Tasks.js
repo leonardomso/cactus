@@ -4,12 +4,13 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
 import { deleteTask } from '../actions/';
-import cross from '../utils/icons/cross.svg';
 import Task from './Task';
 
-const StyledTasks = styled.main`
+const StyledTasks = styled.ul`
     width: 100%;
     height: 100%;
+    max-width: 500px;
+    min-width: 250px;
     background-color: white;
     grid-row: 2 / 3;
     display: flex;
