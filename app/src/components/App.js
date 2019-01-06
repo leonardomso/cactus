@@ -19,15 +19,20 @@ const Container = styled.div`
         margin-right: 20px;
         width: 24px;
         height: 24px;
-        color: #005ede;
+        color: #7FB800;
     };
 `;
 
-const App = () => (
+const App = ({ tasks }) => (
     <Container>
         <AddTask />
-        <Tasks />
+        <Tasks tasks={tasks} />
     </Container>
 );
 
-export default connect()(App);
+
+const mapStateToProps = state => ({
+    tasks: state.tasks
+})
+
+export default connect(mapStateToProps, null)(App);

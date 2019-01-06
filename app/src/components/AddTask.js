@@ -40,7 +40,7 @@ class AddTask extends Component {
     render() {
         return (
             <StyledAddTask>
-                <Title>Trololo Board</Title>
+                <Title>Cactus</Title>
                 <SubTitle>There are {this.state.tasks} tasks on board</SubTitle>
                 <Paragraph>
                     Type task text and click on card to move to another list.

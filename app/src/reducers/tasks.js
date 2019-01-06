@@ -1,32 +1,22 @@
-import uuid from 'uuid';
-
 import * as types from '../constants';
 
-const initialState = [];
+const initialState = {
+    loading: false,
+    allTasks: [],
+    error: null
+};
 
 export default (state = initialState, action) => {
     switch (action.type) {
-    case types.ADD_TASK:
-        return [
-            ...state,
-            {
-                id: uuid(),
-                completed: false,
-                text: action.text
-            }
-        ];
-    case types.DELETE_TASK:
-        return state.filter(task => task.id !== action.id);
-    case types.COMPLETE_TASK:
-        return state.map(
-            task =>
-                task.id === action.id
-                    ? {
-                        ...task,
-                        completed: !task.completed
-                    }
-                    : task
-        );
+    case types.ADD_TASK_REQUEST:
+        return { ...state, loading: true };
+    case types.ADD_TASK_SUCCESS:
+        return {
+            allTasks: [...state.allTasks, { text: action.text }],
+            loading: false
+        };
+    case types.ADD_TASK_ERROR:
+        return [{ ...state, loading: false, error: action.error }];
     default:
         return state;
     }
