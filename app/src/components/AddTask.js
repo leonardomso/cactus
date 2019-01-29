@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
@@ -11,70 +11,48 @@ import Form from '../utils/components/UI/Form/Form';
 import Input from '../utils/components/UI/Input/Input';
 import Button from '../utils/components/UI/Button/Button';
 
-import { addTask } from '../actions';
+import { addTask } from '../actions/';
 
-class AddTask extends Component {
-    constructor(props) {
-        super(props);
+const AddTask = ({ addTask }) => {
+    const [text, setText] = useState("");
 
-        this.state = {
-            text: '',
-            tasks: 0
-        };
-    }
+    const onChange = e => {
+        setText(e.target.value);
+    };
 
-    onSubmit = e => {
+    const onSubmit = e => {
         e.preventDefault();
-        if (this.state.text !== '') {
-            this.props.addTask(this.state.text);
-            this.setState({ text: '' });
-        }
+        addTask(text);
+        setText("");
     };
 
-    onInputChange = e => {
-        this.setState({
-            text: e.target.value
-        });
-    };
+    return (
+        <StyledAddTask>
+            <Title><span role="img" aria-label="cactus">🌵</span> Cactus</Title>
+            <SubTitle>There are 0 tasks on board</SubTitle>
+            <Paragraph>
+                Type task text and click on card to move to another list.
+            </Paragraph>
 
-    render() {
-        return (
-            <StyledAddTask>
-                <Title>Cactus</Title>
-                <SubTitle>There are {this.state.tasks} tasks on board</SubTitle>
-                <Paragraph>
-                    Type task text and click on card to move to another list.
-                </Paragraph>
-
-                <Form onSubmit={this.onSubmit}>
-                    <Input
-                        width="75%"
-                        value={this.state.text}
-                        onChange={this.onInputChange}
-                        type="text"
-                        placeholder="New task..."
-                        autoFocus
-                    />
-                    <Button width="20%" onClick={this.onSubmit}>
-                        Add
-                    </Button>
-                </Form>
-            </StyledAddTask>
-        );
-    }
+            <Form onSubmit={onSubmit}>
+                <Input
+                    width="75%"
+                    type="text"
+                    placeholder="New task..."
+                    value={text}
+                    onChange={onChange}
+                    autoFocus
+                />
+                <Button width="20%" onClick={() => console.log(text)}>
+                    Add
+                </Button>
+            </Form>
+        </StyledAddTask>
+      );
 }
 
-const mapStateToProps = state => {
-    return {
-        tasks: state.tasks
-    };
-};
-
 const mapDispatchToProps = dispatch => {
-    return bindActionCreators({ addTask }, dispatch);
+    return bindActionCreators({ addTask }, dispatch)
 };
 
-export default connect(
-    mapStateToProps,
-    mapDispatchToProps
-)(AddTask);
+export default connect(null, mapDispatchToProps)(AddTask);

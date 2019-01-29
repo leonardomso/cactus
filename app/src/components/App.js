@@ -30,9 +30,8 @@ const App = ({ tasks }) => (
     </Container>
 );
 
-
-const mapStateToProps = state => ({
-    tasks: state.tasks
-})
+const mapStateToProps = ({ tasks }) => ({
+    tasks
+});
 
 export default connect(mapStateToProps, null)(App);

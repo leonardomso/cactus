@@ -28,24 +28,24 @@ export const deleteTaskError = (error) => ({
     error
 });
 
-export const addTask = ({ text, error }) => dispatch => {
+export const addTask = ({ text }) => dispatch => {
     dispatch(addTaskRequest());
 
     try {
         dispatch(addTaskSuccess(text));
     }
     catch (err) {
-        dispatch(addTaskError(error));
+        dispatch(addTaskError(err));
     }
 }
 
-export const deleteTask = ({ id, error }) => dispatch => {
+export const deleteTask = ({ id }) => dispatch => {
     dispatch(deleteTaskRequest());
 
     try {
         dispatch(deleteTaskSuccess(id));
     }
     catch (err) {
-        dispatch(deleteTaskError(error));
+        dispatch(deleteTaskError(err));
     }
 }
