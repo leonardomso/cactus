@@ -1,9 +1,9 @@
-import React from 'react';
-import { connect } from 'react-redux';
+import React from "react";
+import { connect } from "react-redux";
 
-import StyledTasks from '../utils/components/Tasks/Tasks'
+import StyledTasks from "../utils/components/Tasks/Tasks";
 
-import Task from './Task';
+import Task from "./Task";
 
 const Tasks = ({ tasks }) => (
     <StyledTasks>

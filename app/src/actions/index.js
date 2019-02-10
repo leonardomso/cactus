@@ -9,7 +9,7 @@ export const addTaskSuccess = text => ({
     text
 });
 
-export const addTaskError = (error) => ({
+export const addTaskError = error => ({
     type: types.ADD_TASK_ERROR,
     error
 });
@@ -23,7 +23,7 @@ export const deleteTaskSuccess = id => ({
     id
 });
 
-export const deleteTaskError = (error) => ({
+export const deleteTaskError = error => ({
     type: types.DELETE_TASK_ERROR,
     error
 });
@@ -33,19 +33,17 @@ export const addTask = ({ text }) => dispatch => {
 
     try {
         dispatch(addTaskSuccess(text));
-    }
-    catch (err) {
+    } catch (err) {
         dispatch(addTaskError(err));
     }
-}
+};
 
 export const deleteTask = ({ id }) => dispatch => {
     dispatch(deleteTaskRequest());
 
     try {
         dispatch(deleteTaskSuccess(id));
-    }
-    catch (err) {
+    } catch (err) {
         dispatch(deleteTaskError(err));
     }
-}
+};

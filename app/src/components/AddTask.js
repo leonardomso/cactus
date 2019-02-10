@@ -1,17 +1,17 @@
-import React, { useState } from 'react';
-import { bindActionCreators } from 'redux';
-import { connect } from 'react-redux';
+import React, { useState } from "react";
+import { bindActionCreators } from "redux";
+import { connect } from "react-redux";
 
-import StyledAddTask from '../utils/components/AddTask/AddTask'
-import Title from '../utils/components/AddTask/Title/Title'
-import SubTitle from '../utils/components/AddTask/SubTitle/SubTitle'
-import Paragraph from '../utils/components/AddTask/Paragraph/Paragraph'
+import StyledAddTask from "../utils/components/AddTask/AddTask";
+import Title from "../utils/components/AddTask/Title/Title";
+import SubTitle from "../utils/components/AddTask/SubTitle/SubTitle";
+import Paragraph from "../utils/components/AddTask/Paragraph/Paragraph";
 
-import Form from '../utils/components/UI/Form/Form';
-import Input from '../utils/components/UI/Input/Input';
-import Button from '../utils/components/UI/Button/Button';
+import Form from "../utils/components/UI/Form/Form";
+import Input from "../utils/components/UI/Input/Input";
+import Button from "../utils/components/UI/Button/Button";
 
-import { addTask } from '../actions/';
+import { addTask } from "../actions/";
 
 const AddTask = ({ addTask }) => {
     const [text, setText] = useState("");
@@ -28,7 +28,12 @@ const AddTask = ({ addTask }) => {
 
     return (
         <StyledAddTask>
-            <Title><span role="img" aria-label="cactus">🌵</span> Cactus</Title>
+            <Title>
+                <span role="img" aria-label="cactus">
+                    🌵
+                </span>{" "}
+                Cactus
+            </Title>
             <SubTitle>There are 0 tasks on board</SubTitle>
             <Paragraph>
                 Type task text and click on card to move to another list.
@@ -48,11 +53,14 @@ const AddTask = ({ addTask }) => {
                 </Button>
             </Form>
         </StyledAddTask>
-      );
-}
-
-const mapDispatchToProps = dispatch => {
-    return bindActionCreators({ addTask }, dispatch)
+    );
 };
 
-export default connect(null, mapDispatchToProps)(AddTask);
+const mapDispatchToProps = dispatch => {
+    return bindActionCreators({ addTask }, dispatch);
+};
+
+export default connect(
+    null,
+    mapDispatchToProps
+)(AddTask);

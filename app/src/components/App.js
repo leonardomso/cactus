@@ -1,9 +1,9 @@
-import React from 'react';
-import styled from 'styled-components';
-import { connect } from 'react-redux';
+import React from "react";
+import styled from "styled-components";
+import { connect } from "react-redux";
 
-import AddTask from './AddTask';
-import Tasks from './Tasks';
+import AddTask from "./AddTask";
+import Tasks from "./Tasks";
 
 const Container = styled.div`
     display: flex;
@@ -19,8 +19,8 @@ const Container = styled.div`
         margin-right: 20px;
         width: 24px;
         height: 24px;
-        color: #7FB800;
-    };
+        color: #7fb800;
+    }
 `;
 
 const App = ({ tasks }) => (
@@ -34,4 +34,7 @@ const mapStateToProps = ({ tasks }) => ({
     tasks
 });
 
-export default connect(mapStateToProps, null)(App);
+export default connect(
+    mapStateToProps,
+    null
+)(App);
