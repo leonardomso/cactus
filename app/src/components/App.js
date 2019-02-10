@@ -1,40 +1,30 @@
-import React from "react";
-import styled from "styled-components";
-import { connect } from "react-redux";
+import React, { useState } from "react";
+
+import Container from '../utils/components/Container/Container'
 
 import AddTask from "./AddTask";
 import Tasks from "./Tasks";
 
-const Container = styled.div`
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100vh;
-    padding: 15px;
-    background: white;
+const App = () => {
+    const [tasks, setTasks] = useState([]);
 
-    svg {
-        margin-right: 20px;
-        width: 24px;
-        height: 24px;
-        color: #7fb800;
-    }
-`;
+    const addTask = text => {
+        const newTasks = [...tasks, { text }];
+        setTasks(newTasks);
+    };
 
-const App = ({ tasks }) => (
-    <Container>
-        <AddTask />
-        <Tasks tasks={tasks} />
-    </Container>
-);
+    const deleteTask = index => {
+        const newTasks = [...tasks];
+        newTasks.splice(index, 1);
+        setTasks(newTasks);
+    };
 
-const mapStateToProps = ({ tasks }) => ({
-    tasks
-});
+    return (
+        <Container>
+            <AddTask addTask={addTask} />
+            <Tasks tasks={tasks} deleteTask={deleteTask} />
+        </Container>
+    );
+};
 
-export default connect(
-    mapStateToProps,
-    null
-)(App);
+export default App;
