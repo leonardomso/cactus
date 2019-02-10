@@ -8,7 +8,7 @@
 Cactus
 </h1>
 
-<p align="center">A task board made with React and Redux.</p>
+<p align="center">A task board made with React Hooks.</p>
 
 <p align="center">
   <a href="http://makeapullrequest.com">
