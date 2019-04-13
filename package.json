@@ -1,14 +1,38 @@
 {
-    "name": "cactus",
-    "version": "1.0.0",
-    "description": "🌵 A task board, made with React and Redux.",
-    "keywords": [
-        "react",
-        "redux",
-        "webpack",
-        "jest",
-        "styled-components"
-    ],
-    "author": "Leonardo Maldonado <leonardomso11@gmail.com>",
-    "license": "MIT"
+    "name": "app",
+    "version": "0.1.0",
+    "private": true,
+    "dependencies": {
+        "@types/jest": "^24.0.11",
+        "@types/node": "^11.13.4",
+        "@types/react": "^16.8.13",
+        "@types/react-dom": "^16.8.3",
+        "@types/styled-components": "^4.1.14",
+        "jest-dom": "^3.1.3",
+        "react": "^16.8.6",
+        "react-dom": "^16.8.6",
+        "react-feather": "^1.1.6",
+        "react-router-dom": "^4.3.1",
+        "react-scripts": "^2.1.8",
+        "react-testing-library": "^6.0.4",
+        "styled-components": "^4.2.0",
+        "ts-jest": "^24.0.2",
+        "typescript": "^3.4.3",
+        "uuid": "^3.3.2"
+    },
+    "scripts": {
+        "start": "react-scripts start",
+        "build": "react-scripts build",
+        "test": "react-scripts test",
+        "eject": "react-scripts eject"
+    },
+    "eslintConfig": {
+        "extends": "react-app"
+    },
+    "browserslist": [
+        ">0.2%",
+        "not dead",
+        "not ie <= 11",
+        "not op_mini all"
+    ]
 }
