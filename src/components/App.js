@@ -21,7 +21,7 @@ const App = () => {
 
     return (
         <Container>
-            <AddTask addTask={addTask} />
+            <AddTask addTask={addTask} tasks={tasks.length} />
             <Tasks tasks={tasks} deleteTask={deleteTask} />
         </Container>
     );
