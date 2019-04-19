@@ -1,13 +1,10 @@
 import React, { useState } from "react";
 
-import StyledAddTask from "../utils/components/AddTask/AddTask";
-import Title from "../utils/components/AddTask/Title/Title";
-import SubTitle from "../utils/components/AddTask/SubTitle/SubTitle";
-import Paragraph from "../utils/components/AddTask/Paragraph/Paragraph";
+import { Styled, Title, SubTitle, Paragraph } from './AddTask.styles';
 
-import Form from "../utils/components/UI/Form/Form";
-import Input from "../utils/components/UI/Input/Input";
-import Button from "../utils/components/UI/Button/Button";
+import Form from "../../utils/components/UI/Form/Form";
+import Input from "../../utils/components/UI/Input/Input";
+import Button from "../../utils/components/UI/Button/Button";
 
 const AddTask = ({ addTask, tasks }) => {
     const [text, setText] = useState("");
@@ -20,7 +17,7 @@ const AddTask = ({ addTask, tasks }) => {
     };
 
     return (
-        <StyledAddTask>
+        <Styled>
             <Title>
                 <span role="img" aria-label="cactus">
                     🌵
@@ -45,7 +42,7 @@ const AddTask = ({ addTask, tasks }) => {
                 />
                 <Button width="20%">Add</Button>
             </Form>
-        </StyledAddTask>
+        </Styled>
     );
 };
 

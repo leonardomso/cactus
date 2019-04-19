@@ -1,16 +1,16 @@
 import styled from 'styled-components';
 
-const StyledAddTask = styled.nav`
+export const Styled = styled.ul`
     width: 100%;
+    height: 100%;
     max-width: 500px;
     min-width: 250px;
-    height: 50%;
+    padding: 0;
+    background-color: white;
+    grid-row: 2 / 3;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: start;
     align-items: center;
-    grid-row: 1 / 2;
-    grid-column: 1 / 2;
+    border-radius: 3px;
 `;
-
-export default StyledAddTask;

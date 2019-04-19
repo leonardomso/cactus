@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const StyledTask = styled.li`
+export const Styled = styled.li`
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -16,4 +16,10 @@ const StyledTask = styled.li`
     }
 `;
 
-export default StyledTask;
+export const Text = styled.p`
+    margin: 0 auto;
+    color: #212b36;
+    font-size: 1rem;
+    font-family: "Inter UI Medium", sans-serif;
+    font-weight: 400;
+`;

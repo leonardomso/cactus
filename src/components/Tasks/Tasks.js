@@ -1,11 +1,11 @@
 import React from "react";
 
-import StyledTasks from "../utils/components/Tasks/Tasks";
+import { Styled } from "./Tasks.styles";
 
-import Task from "./Task";
+import Task from "../Task/Task";
 
 const Tasks = ({ tasks, deleteTask }) => (
-    <StyledTasks>
+    <Styled>
         {tasks.map((task, index) => (
             <Task
                 key={index}
@@ -14,7 +14,7 @@ const Tasks = ({ tasks, deleteTask }) => (
                 text={task.text}
             />
         ))}
-    </StyledTasks>
+    </Styled>
 );
 
 export default Tasks;

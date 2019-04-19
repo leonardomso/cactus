@@ -2,8 +2,8 @@ import React, { useState } from "react";
 
 import Container from '../utils/components/Container/Container'
 
-import AddTask from "./AddTask";
-import Tasks from "./Tasks";
+import AddTask from "./AddTask/AddTask";
+import Tasks from "./Tasks/Tasks";
 
 const App = () => {
     const [tasks, setTasks] = useState([]);

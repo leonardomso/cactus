@@ -1,14 +1,13 @@
 import React from "react";
 import { X } from "react-feather";
 
-import StyledTask from "../utils/components/Task/Task";
-import Text from "../utils/components/Task/Text/Text";
+import { Styled, Text } from './Task.styles'
 
 const Task = ({ text, index, deleteTask }) => (
-    <StyledTask>
+    <Styled>
         <Text>{text}</Text>
         <X onClick={() => deleteTask(index)} />
-    </StyledTask>
+    </Styled>
 );
 
 export default Task;

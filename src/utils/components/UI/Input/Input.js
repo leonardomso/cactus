@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 const Input = styled.input`
-    width: ${props => props.width};
+    width: ${({ width }) => width};
     max-width: 380px;
     border-radius: 4px;
     text-indent: 20px;

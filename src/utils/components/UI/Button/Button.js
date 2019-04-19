@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 const Button = styled.button`
-    width: ${props => props.width};
+    width: ${({ width }) => width};
     height: 44px;
     font-size: 14px;
     font-family: 'Inter UI Medium', sans-serif;
