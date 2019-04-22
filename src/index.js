@@ -6,7 +6,7 @@ import { createGlobalStyle } from "styled-components";
 import * as serviceWorker from "./serviceWorker";
 
 import App from "./components/App";
-import reset from "./constants/css/reset";
+import reset from "./constants/reset";
 
 const GlobalStyle = createGlobalStyle`${reset}`;
 
