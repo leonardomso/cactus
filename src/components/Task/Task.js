@@ -4,7 +4,7 @@ import { X } from "react-feather";
 import { Styled, Text } from './Task.styles'
 
 const Task = ({ text, index, deleteTask }) => (
-    <Styled>
+    <Styled data-testid="task">
         <Text>{text}</Text>
         <X onClick={() => deleteTask(index)} />
     </Styled>
