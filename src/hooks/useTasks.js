@@ -9,7 +9,7 @@ const useTasks = () => {
   };
 
   const deleteTask = index => {
-  const newTasks = [...tasks];
+    const newTasks = [...tasks];
     newTasks.splice(index, 1);
     setTasks(newTasks);
   };

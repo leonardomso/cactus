@@ -1,9 +1,16 @@
 import { useState } from 'react';
 
-const useText = () => {
+const useText = (addTask) => {
   const [text, setText] = useState("");
 
-  return { text, setText }
+  const handleSubmit = e => {
+    e.preventDefault();
+    if (!text) return;
+    addTask(text);
+    setText("");
+};
+
+  return { text, setText, handleSubmit }
 };
 
 export default useText;

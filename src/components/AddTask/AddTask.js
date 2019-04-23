@@ -9,14 +9,7 @@ import Input from "../../utils/components/UI/Input/Input";
 import Button from "../../utils/components/UI/Button/Button";
 
 const AddTask = ({ addTask, tasks }) => {
-    const { text, setText } = useText();
-
-    const handleSubmit = e => {
-        e.preventDefault();
-        if (!text) return;
-        addTask(text);
-        setText("");
-    };
+    const { text, setText, handleSubmit } = useText(addTask);
 
     return (
         <Styled>
