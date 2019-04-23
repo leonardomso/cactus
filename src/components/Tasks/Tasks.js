@@ -5,7 +5,7 @@ import { Styled } from "./Tasks.styles";
 import Task from "../Task/Task";
 
 const Tasks = ({ tasks, deleteTask }) => (
-    <Styled>
+    <Styled data-testid="tasks">
         {tasks.map((task, index) => (
             <Task
                 key={index}

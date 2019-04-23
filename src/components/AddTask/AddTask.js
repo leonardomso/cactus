@@ -35,6 +35,7 @@ const AddTask = ({ addTask, tasks }) => {
 
             <Form onSubmit={handleSubmit}>
                 <Input
+                    data-testid="input"
                     width="75%"
                     type="text"
                     placeholder="New task..."
@@ -42,7 +43,7 @@ const AddTask = ({ addTask, tasks }) => {
                     onChange={e => setText(e.target.value)}
                     autoFocus
                 />
-                <Button width="20%">Add</Button>
+                <Button width="20%" data-testid="submit-button">Add</Button>
             </Form>
         </Styled>
     );
