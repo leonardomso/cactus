@@ -6,7 +6,10 @@ import Tasks from './Tasks';
 describe('Tasks', () => {
   it('Renders the Tasks ', () => {
     const tasks = [{ text: "A simple task", deleteTask: jest.fn() }];
-    render(<Tasks tasks={tasks} />)
+    const { getAllByTestId } = render(<Tasks tasks={tasks} />)
+    const task = getAllByTestId('task').map(li => li.textContent);
+    const fakeTasks = tasks.map(task => task.text);
+    expect(task).toEqual(fakeTasks);
   })
 })
 
