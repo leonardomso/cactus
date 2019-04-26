@@ -1,7 +1,9 @@
 import React from 'react';
-import { render, waitForElement, fireEvent } from 'react-testing-library';
+import { render, fireEvent } from 'react-testing-library';
+import { renderHook, act } from 'react-hooks-testing-library'
 
 import AddTask from './AddTask';
+import useTasks from '../../hooks/useTasks'
 
 describe('AddTask', () => {
   it('renders the AddTask', () => {
@@ -11,7 +13,7 @@ describe('AddTask', () => {
   });
 
   it('Should add a Task after clicking the button', () => {
-    const addTask = jest.fn();
+    const { add } = renderHook(() => useTasks())
 
     const { getByTestId } = render(<AddTask addTask={addTask} />)
     
@@ -19,9 +21,9 @@ describe('AddTask', () => {
 
     fireEvent.change(input, { target: { value: 'cleaning' } });
 
-    fireEvent.click(addTask);
+    act(() => add.current.addTask())
 
     expect(input.value).toBe('cleaning')
-    expect(addTask).toHaveBeenCalledTimes(1)
+    expect(add.current.addTask()).toHaveBeenCalledTimes(1)
   })
 })
