@@ -13,17 +13,15 @@ describe('AddTask', () => {
   });
 
   it('Should add a Task after clicking the button', () => {
-    const { add } = renderHook(() => useTasks())
-
+    const { add } = renderHook(() => useTasks());
     const { getByTestId } = render(<AddTask addTask={addTask} />)
     
-    const input = getByTestId('input')  
-
+    const input = getByTestId('input');
     fireEvent.change(input, { target: { value: 'cleaning' } });
 
-    act(() => add.current.addTask())
+    act(() => add.current.addTask('test'))
 
     expect(input.value).toBe('cleaning')
-    expect(add.current.addTask()).toHaveBeenCalledTimes(1)
+    expect(add.current.addTask('test')).toHaveBeenCalledTimes(1)
   })
 })
