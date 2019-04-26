@@ -1,14 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 
 import Container from '../utils/components/Container/Container'
-
-import useTasks from '../hooks/useTasks';
 
 import AddTask from "./AddTask/AddTask";
 import Tasks from "./Tasks/Tasks";
 
 const App = () => {
-    const { tasks, addTask, deleteTask } = useTasks();
+    const [tasks, setTasks] = useState([]);
+
+    const addTask = text => {
+      const newTasks = [...tasks, { text }];
+      setTasks(newTasks);
+    };
+  
+    const deleteTask = index => {
+      const newTasks = [...tasks];
+      newTasks.splice(index, 1);
+      setTasks(newTasks);
+    };
 
     return (
         <Container>

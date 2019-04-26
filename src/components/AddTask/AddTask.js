@@ -1,15 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 
 import { Styled, Title, SubTitle, Paragraph } from './AddTask.styles';
-
-import useText from '../../hooks/useText';
 
 import Form from "../../utils/components/UI/Form/Form";
 import Input from "../../utils/components/UI/Input/Input";
 import Button from "../../utils/components/UI/Button/Button";
 
 const AddTask = ({ addTask, tasks }) => {
-    const { text, setText, handleSubmit } = useText(addTask);
+    const [text, setText] = useState("");
+
+    const handleSubmit = e => {
+        e.preventDefault();
+        if (!text) return;
+        addTask(text);
+        setText("");
+    };
 
     return (
         <Styled>
