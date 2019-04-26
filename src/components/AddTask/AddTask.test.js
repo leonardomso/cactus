@@ -10,16 +10,18 @@ describe('AddTask', () => {
     expect(button.innerHTML).toBe('Add')
   });
 
-  // it('Should add a Task after clicking the button', () => {
-  //   const newTask = "I should start to write more tests, for sure.";
-  //   const { getByText } = render(<AddTask />)
-  //   const button = getByText('Add')
-  //   expect(button.innerHTML).toBe('Add')
-  // })
+  it('Should add a Task after clicking the button', () => {
+    const addTask = jest.fn();
 
-  // it('Should not add a Task after clicking the button with a empty input value', () => {
-  //   const { getByText } = render(<AddTask />)
-  //   const button = getByText('Add')
-  //   expect(button.innerHTML).toBe('Add')
-  // })
+    const { getByTestId } = render(<AddTask addTask={addTask} />)
+    
+    const input = getByTestId('input')  
+
+    fireEvent.change(input, { target: { value: 'cleaning' } });
+
+    fireEvent.click(addTask);
+
+    expect(input.value).toBe('cleaning')
+    expect(addTask).toHaveBeenCalledTimes(1)
+  })
 })
