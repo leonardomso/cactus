@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from 'react-testing-library';
 
-import Tasks from './Tasks';
+import Tasks from '../components/Tasks/Tasks';
 
 describe('Tasks', () => {
   it('Renders the Tasks ', () => {

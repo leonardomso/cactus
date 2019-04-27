@@ -1,7 +1,7 @@
 import React from 'react';
-import { render, waitForElement, fireEvent } from 'react-testing-library';
+import { render } from 'react-testing-library';
 
-import Task from './Task';
+import Task from '../components/Task/Task';
 
 describe('Task', () => {
   it('renders the Task', () => {
