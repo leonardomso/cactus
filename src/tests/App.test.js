@@ -9,15 +9,17 @@ describe('App', () => {
   });
 
   it('Should add a Task after clicking the button', () => {
-    const tasks = [{ text: "A simple task", deleteTask: jest.fn() }];
-    const newTask = { text: "New task", deleteTask: jest.fn() };
-    const addTask = jest.fn();
-    const { getByTestId, container } = render(<AddTask addTask={addTask} />)
-    const input = getByTestId('input');
-    const addButton = getByTestId(container, "submit-button");
-    fireEvent.change(input, { target: { value: 'cleaning' } });
-    expect(input.value).toBe('cleaning')
-    expect(addButton).toHaveBeenCalledTimes(1)
+    const oldTasks = [{ text: "A simple task", deleteTask: jest.fn() }];
+    const newTasks = [
+      { text: "A simple task", deleteTask: jest.fn() }, 
+      { text: "New task", deleteTask: jest.fn() }
+    ];
+    const { getByTestId } = render(<App />);
+    const addButton = getByTestId("addButton");
+    const tasks = getByTestId("tasks");
+    expect(tasks).toEqual(oldTasks);
+    fireEvent.click(addButton);
+    expect(tasks).toEqual(newTasks);
   })
 })
 

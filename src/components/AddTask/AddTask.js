@@ -31,7 +31,7 @@ const AddTask = ({ tasks, handleSubmit, text, setText }) => (
                 onChange={e => setText(e.target.value)}
                 autoFocus
             />
-            <Button width="20%" data-testid="submit-button">Add</Button>
+            <Button width="20%" data-testid="addButton">Add</Button>
         </Form>
     </Styled>
 );
