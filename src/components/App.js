@@ -7,6 +7,14 @@ import Tasks from "./Tasks/Tasks";
 
 const App = () => {
     const [tasks, setTasks] = useState([]);
+    const [text, setText] = useState("");
+
+    const handleSubmit = e => {
+        e.preventDefault();
+        if (!text) return;
+        addTask(text);
+        setText("");
+    };
 
     const addTask = text => {
       const newTasks = [...tasks, { text }];
@@ -21,7 +29,12 @@ const App = () => {
 
     return (
         <Container>
-            <AddTask addTask={addTask} tasks={tasks.length} />
+            <AddTask 
+              handleSubmit={handleSubmit} 
+              text={text} 
+              setText={setText} 
+              tasks={tasks.length} 
+            />
             <Tasks tasks={tasks} deleteTask={deleteTask} />
         </Container>
     );

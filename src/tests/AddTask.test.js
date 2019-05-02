@@ -1,6 +1,7 @@
 import React from 'react';
 import { render, fireEvent } from 'react-testing-library';
 
+import App from '../components/App';
 import AddTask from '../components/AddTask/AddTask';
 
 describe('AddTask', () => {
