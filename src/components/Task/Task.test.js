@@ -2,9 +2,9 @@ import React from 'react';
 import { render } from 'react-testing-library';
 import { renderHook, act } from "react-hooks-testing-library";
 
-import Task from '../components/Task/Task';
+import Task from './Task';
 
-import useTasks from '../hooks/useTasks';
+import useTasks from '../../hooks/useTasks';
 
 describe('Task', () => {
   it('renders the Task', () => {
